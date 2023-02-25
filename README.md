@@ -1,6 +1,6 @@
 # set_timeout function in python
 
-В файле `lib.py` я написал простую, поверхностную эмитацию event loop в javascript.
+В файле `lib.py` я написал поверхностную эмитацию event loop в javascript.
 
 ## how to use
 
