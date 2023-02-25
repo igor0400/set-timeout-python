@@ -1,6 +1,7 @@
 # set_timeout function in python
 
 В файле `lib.py` я написал поверхностную эмитацию event loop в javascript.
+Функция `set_timeout` вызывает переданную в нее функцию с указанной задержкой, при этом не блокируя основной поток кода
 
 ## how to use
 
