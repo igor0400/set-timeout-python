@@ -21,7 +21,7 @@ def update_stack():
 
 stack_thread = threading.Thread(target=update_stack)
 
-def set_timeout(callback, timeout):
+def set_timeout(callback: function, timeout: int):
     global stack_item_id
     stack.append({"id": stack_item_id, "callback": callback, "timeout": round(time.time()) + timeout})
     stack_item_id += 1
