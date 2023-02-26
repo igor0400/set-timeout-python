@@ -1,10 +1,7 @@
 from lib import set_timeout
 
-def start():
-    print('timeout function')
-
-set_timeout(start, 3)
+set_timeout(lambda: print('timeout 1'), 3)
 
 print('not timeouted')
 
-set_timeout(start, 6)
+set_timeout(lambda: print('timeout 2'), 6)
