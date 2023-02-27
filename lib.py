@@ -21,10 +21,17 @@ def update_stack():
 
 stack_thread = threading.Thread(target=update_stack)
 
-def set_timeout(callback: function, timeout: int):
+def set_timeout(callback, timeout: int):
     global stack_item_id
+    global stack_thread
+    global work_thread
+
+    if timeout < 0.004: timeout = 0.004
+
     stack.append({"id": stack_item_id, "callback": callback, "timeout": round(time.time()) + timeout})
     stack_item_id += 1
     
     if not stack_thread.is_alive():
+        stack_thread = threading.Thread(target=update_stack)
+        work_thread = True
         stack_thread.start()
